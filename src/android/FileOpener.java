@@ -161,7 +161,7 @@ public class FileOpener extends CordovaPlugin {
         Uri contentUri = null;
         Intent intent = new Intent(Intent.ACTION_VIEW);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            contentUri = FileProvider.getUriForFile(context, cordova.getActivity().getPackageName() + ".fileProvider", tempFile);
+            contentUri = FileProvider.getUriForFile(context, cordova.getActivity().getPackageName() + ".provider", tempFile);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intent.setDataAndType(contentUri, getMimeType(extension));
         } else {
